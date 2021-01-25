@@ -1,6 +1,4 @@
-.criminalsContainer {
 
-}
 .criminalsList {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -14,9 +12,15 @@
     border: dotted grey;
     padding: 6pt 100pt 6pt 20pt;
     margin: 12pt;
+    width: 100pt;
 }
 
 .name {
     font-weight: bold;
     font-size: 16pt;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 0;
 }
