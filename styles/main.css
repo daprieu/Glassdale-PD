@@ -1,0 +1,22 @@
+.criminalsContainer {
+
+}
+.criminalsList {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* display: flex;
+    flex-wrap: wrap;*/
+
+    
+}
+
+.Criminal {
+    border: dotted grey;
+    padding: 6pt 100pt 6pt 20pt;
+    margin: 12pt;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 16pt;
+}
