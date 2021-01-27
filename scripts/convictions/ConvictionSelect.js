@@ -40,6 +40,7 @@ const render = convictionsCollection => {
             }
         </select>
     `
+    console.log(convictionsCollection)
 }
 export const ConvictionSelect = () => {
     // Trigger fetching the API data and loading it into application state

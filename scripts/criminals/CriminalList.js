@@ -36,7 +36,7 @@ eventHub.addEventListener("crimeChosen", event => {
   // Use the property you added to the event detail.
   if (event.detail.crimeThatWasChosen !== "0"){
     const appStateConvicitons = useConvictions()
-    debugger
+    
     // Use the find method to get the first object in the convictions array that has the same id as the id of the chosen crime
     
     const convictionThatWasChosen = appStateConvicitons.find(convictionObj => {
@@ -46,7 +46,7 @@ eventHub.addEventListener("crimeChosen", event => {
       /*
           Filter the criminals application state down to the people that committed the crime
       */
-     const appStateCriminals = useCriminals()
+    const appStateCriminals = useCriminals()
       const matchingCriminals = appStateCriminals.filter(criminalObj => {
         return criminalObj.conviction === convictionThatWasChosen.name
       })
@@ -60,8 +60,20 @@ eventHub.addEventListener("crimeChosen", event => {
   }
 })
 
+// event listener to react to the fact that the user chose an officer
+eventHub.addEventListener("officerSelect", event => {
+  // How can you access the officer name that was selected by the user?
+  const officerName = event.detail.officer
 
-
+  // How can you get the criminals that were arrested by that officer?
+  const criminals = useCriminals()
+  const matchingCriminals = criminals.filter(criminalObject => {
+          if (criminalObject.arrestingOfficer === officerName) {
+              return true
+          }
+      }
+  )
+})
 
 
 //********************************OLD */
