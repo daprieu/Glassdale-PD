@@ -5,17 +5,26 @@
 import { useConvictions, getConvictions } from "/scripts/convictions/ConvictionsDataProvider.js"
 
 // Get a reference to the DOM element where the <select> will be rendered
+const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".filters__crime")
 
-export const ConvictionSelect = () => {
-    // Trigger fetching the API data and loading it into application state
-    getConvictions()
-    .then( () => {
-      // Get all convictions from application state
-      const convictions = useConvictions()
-      render(convictions)
-    })
-}
+// On the event hub, listen for a "change" event.
+eventHub.addEventListener("change", event => {
+
+    // Only do this if the `crimeSelect` element was changed
+    if (event.target.id === "crimeSelect") {
+       
+        // Create custom event. Provide an appropriate name.
+        const customEvent = new CustomEvent("crimeChosen", {
+            detail: {
+                crimeThatWasChosen: event.target.value
+            }
+        })
+
+        // Dispatch to event hub
+        eventHub.dispatchEvent(customEvent)
+    }
+})
 
 const render = convictionsCollection => {
     /*
@@ -27,11 +36,17 @@ const render = convictionsCollection => {
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
             ${
-                convictionsCollection.map(crime => { 
-                    const crimeName = crime.name
-                    return `<option>${crimeName}</option>`
-                })
+                convictionsCollection.map(crime => `<option value="${crime.id}">${crime.name}</option>`).join("")
             }
         </select>
     `
+}
+export const ConvictionSelect = () => {
+    // Trigger fetching the API data and loading it into application state
+    getConvictions()
+    .then( () => {
+      // Get all convictions from application state
+      const convictions = useConvictions()
+      render(convictions)
+    })
 }
