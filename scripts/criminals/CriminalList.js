@@ -74,8 +74,8 @@ eventHub.addEventListener("officerSelected", event => {
 // officer is represented via the value.id in officerSelect
 // need to .find() to get officer of that id then convert id to string name....?
     const officerChosen = officerArray.find(officerObj => {
-      console.log("id", officerObj.id)
-      console.log("name", officerName)
+      // console.log("id", officerObj.id)
+      // console.log("name", officerName)
       return officerObj.id === parseInt(officerName)
     })
     // How can you get the criminals that were arrested by that officer?
