@@ -30,7 +30,7 @@ eventHub.addEventListener("change", changeEvent => {
             }
         </select>
         `
-        console.log(officerCollection)
+        // console.log(officerCollection)
   }
   export const OfficerSelect = () => {
     // Trigger fetching the API data and loading it into application state

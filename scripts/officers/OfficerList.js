@@ -2,6 +2,7 @@
 import { getOfficers, useOfficers } from "/scripts/officers/OfficerProvider.js"
 import { Officer } from "/scripts/officers/Officers.js"
 
+
 const eventHub = document.querySelector(".container")
 const officersContainer = document.querySelector(".officersContainer")
 

@@ -2,6 +2,7 @@
 import { getCriminals, useCriminals } from "/scripts/criminals/CriminalDataProvider.js"
 import { Criminal } from "/scripts/criminals/Criminal.js"
 import { useConvictions } from "/scripts/convictions/ConvictionsDataProvider.js"
+import { useOfficers } from "/scripts/officers/OfficerProvider.js"
 
 const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
@@ -60,45 +61,30 @@ eventHub.addEventListener("crimeChosen", event => {
   }
 })
 
-// event listener to react to the fact that the user chose an officer
-eventHub.addEventListener("officerSelect", event => {
-  // How can you access the officer name that was selected by the user?
-  const officerName = event.detail.officer
+eventHub.addEventListener("officerSelected", event => {
+  if (event.detail.officer !== "0"){
+    
+    const officerArray = useOfficers()
+    const officerName = event.detail.officer
+//event.detail.officer = (changeEvent.target.value which is set equal to officer selected) = officer id set in the 
+//value of html <option> element when mapping officers.
 
-  // How can you get the criminals that were arrested by that officer?
-  const criminals = useCriminals()
-  const matchingCriminals = criminals.filter(criminalObject => {
-          if (criminalObject.arrestingOfficer === officerName) {
-              return true
-          }
-      }
-  )
+// How can you access the officer name that was selected by the user?
+// Use the find method to get the first object in the convictions array that has the same id as the id of the chosen crime
+// officer is represented via the value.id in officerSelect
+// need to .find() to get officer of that id then convert id to string name....?
+    const officerChosen = officerArray.find(officerObj => {
+      console.log("id", officerObj.id)
+      console.log("name", officerName)
+      return officerObj.id === parseInt(officerName)
+    })
+    // How can you get the criminals that were arrested by that officer?
+    //
+    const criminalsArray = useCriminals()
+    const matchingCriminals = criminalsArray.filter(criminalObj => {
+      return criminalObj.arrestingOfficer === officerChosen.name
+    })
+    // console.log(matchingCriminals)
+    render(matchingCriminals)
+    }
 })
-
-
-//********************************OLD */
-// export const CriminalList = () => {
-
-//   getCriminals()
-//     .then(() => {
-//       const officerArray = useCriminals()
-//       // debugger
-//       /*
-//             Now that you have the data, what
-//             component should be rendered?
-//         */
-
-//       let CriminalsHTMLRepresentations = ""
-
-//       for (const criminalObj of officerArray) {
-//         CriminalsHTMLRepresentations += Criminal(criminalObj)
-//         // debugger
-//       }
-      
-//       CriminalsContainer.innerHTML = `
-//         <h3>Glassdale Criminals</h3>
-//         <section class="criminalsList">
-//         ${CriminalsHTMLRepresentations}
-//         </section>`
-//     })
-// }
