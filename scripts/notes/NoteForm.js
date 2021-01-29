@@ -1,4 +1,5 @@
 import { saveNote } from "./NoteDataProvider.js"
+import { NoteList } from "./NoteList.js"
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
@@ -52,11 +53,11 @@ eventHub.addEventListener("click", clickEvent => {
         // Change API state and application state
         
         saveNote(newNote)
+        
+        NoteList()
     }
 })
-eventHub.addEventListener("click", saveEvent => {
-    
-})
+
 
 export const NoteForm = () => {
     render()
