@@ -1,15 +1,6 @@
 {
   "notes": [
     {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
       "date": "2021-01-27",
       "suspect": "gz",
       "text": "multiple alias",
@@ -31,7 +22,39 @@
       "id": 6
     },
     {
+      "date": "2021-01-29",
+      "suspect": "caleb",
+      "text": "didnt remove savenote",
+      "author": "alex",
       "id": 7
+    },
+    {
+      "date": "",
+      "suspect": "css",
+      "text": "not acting accordingly",
+      "author": "alex",
+      "id": 8
+    },
+    {
+      "date": "2021-01-30",
+      "suspect": "show notes button",
+      "text": "changed js code and it went haywire",
+      "author": "alex",
+      "id": 9
+    },
+    {
+      "date": "2021-01-29",
+      "suspect": "new note list",
+      "text": "notes",
+      "author": "alex",
+      "id": 10
+    },
+    {
+      "date": "2021-01-29",
+      "suspect": "new note list 2",
+      "text": "notes",
+      "author": "alex",
+      "id": 11
     }
   ]
 }

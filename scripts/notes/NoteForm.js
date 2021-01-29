@@ -23,7 +23,8 @@ const render = () => {
         <input type="text" id="note-author">
     </fieldset> 
 
-        <button id="saveNote">Save Note</button>
+        <button class="noteButtons" id="saveNote">Save Note</button>
+        <button class="noteButtons noteListButton" id='showNotes'>Show Notes</button>
     </fieldset>
     `
 }
@@ -52,6 +53,9 @@ eventHub.addEventListener("click", clickEvent => {
         
         saveNote(newNote)
     }
+})
+eventHub.addEventListener("click", saveEvent => {
+    
 })
 
 export const NoteForm = () => {

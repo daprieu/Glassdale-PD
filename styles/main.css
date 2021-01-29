@@ -1,11 +1,21 @@
+.bodySection {
+    display:flex
+}
+h3 {
+    margin: 2em;
+}
 
+.filters {
+    display: flex;
+}
+.filter {
+    margin: 0 .5em 0 ;
+}
 .criminalsList {
     display: grid;
     grid-template-columns: auto auto auto;
     /* display: flex;
     flex-wrap: wrap;*/
-
-    
 }
 
 .Criminal {
@@ -23,4 +33,25 @@
 
 p {
     margin: 0;
+}
+
+.criminalsContainer {
+flex-basis: 75%;
+border: solid black;
+}
+
+.aside {
+    flex-basis: 25%;
+}
+
+.noteList {
+    
+    border: solid;
+}
+
+.note {
+    margin: 1em;
+}
+.noteButtons {
+    margin: 0 1em 0 .0;
 }
