@@ -38,9 +38,11 @@ p {
 .criminalsContainer {
 flex-basis: 75%;
 border: solid black;
+margin-top: 1em;
 }
 
 .aside {
+    margin-top: 1em;
     flex-basis: 25%;
 }
 

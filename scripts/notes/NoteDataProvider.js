@@ -19,7 +19,7 @@ export const getNotes = () => {
 
 export const saveNote = note => {
     let stringifyObj = JSON.stringify(note)
-    debugger
+    // debugger
     return fetch('http://localhost:8088/notes', {
         method: "POST",
         headers: {
