@@ -8,7 +8,7 @@ const dispatchStateChangeEvent = () => {
 
 let notes = []
 
-const getNotes = () => {
+export const getNotes = () => {
     return fetch('http://localhost:8088/notes')
         .then(response => response.json())
         .then(parsedNotes => {
@@ -18,14 +18,18 @@ const getNotes = () => {
 }
 
 export const saveNote = note => {
+    let stringifyObj = JSON.stringify(note)
+    debugger
     return fetch('http://localhost:8088/notes', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(note)
+        body: stringifyObj
     })
-    .then(getNotes)
-    .then(dispatchStateChangeEvent)
+    .then(getNotes) // fetch the notes collection containing the newly added note
+    .then(dispatchStateChangeEvent) // tell any component listening that the notes state has been updated
 }
+
+export const useNotes = () => notes.slice()
 
