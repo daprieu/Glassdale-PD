@@ -89,3 +89,6 @@ eventHub.addEventListener("officerSelected", event => {
     }
 })
 
+eventHub.addEventListener("showWitnessesClicked", event => {
+  contentTarget.innerHTML =""
+})
