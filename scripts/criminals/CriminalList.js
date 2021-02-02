@@ -88,3 +88,4 @@ eventHub.addEventListener("officerSelected", event => {
     render(matchingCriminals)
     }
 })
+
