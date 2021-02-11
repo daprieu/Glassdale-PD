@@ -1,130 +1,18 @@
 {
   "notes": [
     {
-      "date": "2021-01-27",
-      "suspect": "gz",
-      "text": "multiple alias",
-      "author": "alex",
-      "id": 4
+      "date": "2021-02-10",
+      "criminalId": 2,
+      "text": "rh",
+      "author": "rh",
+      "id": 1
     },
     {
-      "date": "2021-01-27",
-      "suspect": "gz",
-      "text": "multiple alias",
-      "author": "alex",
-      "id": 5
-    },
-    {
-      "date": "2021-01-27",
-      "suspect": "gz",
-      "text": "multiple alias",
-      "author": "alex",
-      "id": 6
-    },
-    {
-      "date": "2021-01-29",
-      "suspect": "caleb",
-      "text": "didnt remove savenote",
-      "author": "alex",
-      "id": 7
-    },
-    {
-      "date": "",
-      "suspect": "css",
-      "text": "not acting accordingly",
-      "author": "alex",
-      "id": 8
-    },
-    {
-      "date": "2021-01-30",
-      "suspect": "show notes button",
-      "text": "changed js code and it went haywire",
-      "author": "alex",
-      "id": 9
-    },
-    {
-      "date": "2021-01-29",
-      "suspect": "new note list",
-      "text": "notes",
-      "author": "alex",
-      "id": 10
-    },
-    {
-      "date": "2021-01-29",
-      "suspect": "new note list 2",
-      "text": "notes",
-      "author": "alex",
-      "id": 11
-    },
-    {
-      "date": "",
-      "suspect": "",
-      "text": "",
-      "author": "",
-      "id": 12
-    },
-    {
-      "date": "2021-01-29",
-      "suspect": "nathan",
-      "text": "guilty ",
-      "author": "alex",
-      "id": 13
-    },
-    {
-      "date": "",
-      "suspect": "",
-      "text": "",
-      "author": "",
-      "id": 14
-    },
-    {
-      "date": "",
-      "suspect": "",
-      "text": "",
-      "author": "",
-      "id": 15
-    },
-    {
-      "date": "",
-      "suspect": "new note",
-      "text": "",
-      "author": "",
-      "id": 16
-    },
-    {
-      "date": "2021-01-30",
-      "suspect": "asdfas",
-      "text": "asdfasdf",
-      "author": "asdfasdf",
-      "id": 17
-    },
-    {
-      "date": "2021-01-30",
-      "suspect": "lkjlkjl;kj",
-      "text": "lkjklj;kj",
-      "author": "lhkljkj",
-      "id": 18
-    },
-    {
-      "date": "",
-      "suspect": "erica",
-      "text": "broke show notes",
-      "author": "alex",
-      "id": 19
-    },
-    {
-      "date": "2021-01-20",
-      "suspect": "scort",
-      "text": "chapt 7",
-      "author": "alex",
-      "id": 20
-    },
-    {
-      "date": "2021-01-20",
-      "suspect": "scort 2",
-      "text": "chapt 7",
-      "author": "alex",
-      "id": 21
+      "date": "2021-02-11",
+      "criminalId": 2,
+      "text": "aa",
+      "author": "aa",
+      "id": 2
     }
   ]
 }
