@@ -9,6 +9,10 @@ import "./notes/NoteList.js"
 import { getWitnesses } from "./witnesses/WitnessDataProvider.js";
 import { ShowWitnessesButton } from "./witnesses/ShowWitnessButton.js";
 import { WitnessesList } from "./witnesses/WitnessList.js";
+import { getCriminals } from "./criminals/CriminalDataProvider.js";
+import { getFacilities } from "./facility/FacilityProvider.js";
+import { getCriminalFacilities } from "./facility/CriminalFacilityProvider.js";
+// import { ShowWitnessesButton } from "./witnesses/ShowWitnessButton.js";
 
 
 // import { ShowAlibis } from "./alibis/AssociatesButton.js";
@@ -25,3 +29,6 @@ ShowNoteButton()
 getWitnesses()
 ShowWitnessesButton()
 WitnessesList()
+// ShowWitnessesButton()
+getFacilities()
+getCriminalFacilities()
