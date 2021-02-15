@@ -37,6 +37,8 @@ p {
 }
 
 .criminalsContainer {
+display: grid;
+grid-template-columns: auto auto auto;
 flex-basis: 75%;
 border: solid black;
 margin-top: 1em;
