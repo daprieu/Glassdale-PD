@@ -1,3 +1,4 @@
+import { CriminalList } from "../criminals/CriminalList.js"
 import { getWitnesses, useWitnesses } from "./WitnessDataProvider.js"
 import { Witnesses } from "./Witnesses.js"
 
@@ -21,6 +22,9 @@ const render = WitnessesCollection => {
 
 eventHub.addEventListener("showWitnessesClicked", customEvent => {
     WitnessesList()
+})
+eventHub.addEventListener("closeWitnessesClicked", customEvent => {
+    CriminalList()
 })
 
 export const WitnessesList = () => {
