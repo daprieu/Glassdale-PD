@@ -1,4 +1,4 @@
-import { getNotes, useNotes } from "./NoteDataProvider.js";
+import { deleteNote, getNotes, useNotes } from "./NoteDataProvider.js";
 // import { NoteHTMLConverter } from "./Note.js"; 
 import { useCriminals, getCriminals } from '../criminals/CriminalDataProvider.js'
 
@@ -24,6 +24,8 @@ const render = (noteCollection, criminalCollection) => {
                 <p>Text: ${note.text}</p>
                 <p>Author: ${note.author}</p>
             </section>
+            <button id="deleteNote--${note.id}">Delete</button>
+
         `
     }).join("")
     
@@ -40,41 +42,22 @@ export const NoteList = () => {
             
         })
 }
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+        /*
+            Invoke the function that performs the delete operation.
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+    deleteNote(id).then(
+        () => {
+            const updatedNotes = useNotes()
+            const criminals = useCriminals()
+            render(updatedNotes, criminals)
+        }
+    )}
+})
 
 
 
-
-// // Query the DOM for the element that your notes will be added to 
-// const contentTarget = document.querySelector(".noteList")
-// // Define ye olde Evente Hubbe
-// const eventHub = document.querySelector(".container")
-
-// eventHub.addEventListener("showNotesClicked", customEvent => {
-//     // debugger
-//     NoteList()
-// })
-
-// const render = (noteArray) => {
-//     const allNotesConvertedToStrings = noteArray.map( noteObject => NoteHTMLConverter(noteObject)).join("")
-//         // debugger
-    
-//         // convert the notes objects to HTML with NoteHTMLConverter
-
-    
-
-//     contentTarget.innerHTML = `
-//     <h3>Case Notes</h3>
-//     <section class="notesList">
-//     ${allNotesConvertedToStrings}
-//     </section>`
-// }
-
-
-// // Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
-// export const NoteList = () => {
-//     getNotes()
-//         .then(() => {
-//             const allNotes = useNotes()
-//             render(allNotes)
-//         })
-// }

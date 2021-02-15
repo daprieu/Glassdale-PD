@@ -35,6 +35,7 @@ const render = (criminalArray) => {
 
         <button class="noteButtons" id="saveNote">Save Note</button>
         <button class="noteButtons noteListButton" id='showNotes'>Show Notes</button>
+        
     </fieldset>
     `
 }
