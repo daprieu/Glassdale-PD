@@ -35,20 +35,20 @@ export const CriminalList = () => {
       )
 }
 
-// const render = criminalCollection => {
-//   let criminalsHTMLRepresentations = ""
+const criminalRender = criminalCollection => {
+  let criminalsHTMLRepresentations = ""
 
-//   for (const criminal of criminalCollection) {
-//     criminalsHTMLRepresentations += Criminal(criminal)
-//   }
+  for (const criminal of criminalCollection) {
+    criminalsHTMLRepresentations += Criminal(criminal)
+  }
 
-//   contentTarget.innerHTML = `
-//         <h3>Criminals</h3>
-//         <section class="criminalsList">
-//         ${criminalsHTMLRepresentations}
-//         </section>`
+  contentTarget.innerHTML = `
+        <h3>Criminals</h3>
+        <section class="criminalsList">
+        ${criminalsHTMLRepresentations}
+        </section>`
         
-// }
+}
 const render = (criminalsToRender, allFacilities, allRelationships) => {
   // Step 1 - Iterate all criminals
   contentTarget.innerHTML = criminalsToRender.map(
@@ -92,7 +92,7 @@ eventHub.addEventListener("crimeChosen", event => {
           Then invoke render() and pass the filtered collection as
           an argument
       */
-    render(matchingCriminals)
+    criminalRender(matchingCriminals)
     console.log(matchingCriminals)
   }
 })
@@ -121,14 +121,10 @@ eventHub.addEventListener("officerSelected", event => {
       return criminalObj.arrestingOfficer === officerChosen.name
     })
     // console.log(matchingCriminals)
-    render(matchingCriminals)
+    criminalRender(matchingCriminals)
     }
 })
 
 eventHub.addEventListener("showWitnessesClicked", event => {
-  contentTarget.innerHTML =""
-})
-
-eventHub.addEventListener("closeWitnessesClicked", event => {
   contentTarget.innerHTML =""
 })
