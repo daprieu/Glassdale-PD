@@ -14,7 +14,6 @@ export const getNotes = () => {
         .then(parsedNotes => {
             notes = parsedNotes
         })
-
 }
 
 export const saveNote = note => {

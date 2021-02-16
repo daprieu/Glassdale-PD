@@ -10,10 +10,6 @@ const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 
-let facilities = useFacilities()
-let crimFac = useCriminalFacilities()
-let criminals = useCriminals()
-
 export const CriminalList = () => {
   // Kick off the fetching of both collections of data
   getFacilities()
@@ -92,7 +88,9 @@ eventHub.addEventListener("officerSelected", event => {
     
     }
 })
-
+eventHub.addEventListener("facilitiesButtonClicked", event => {
+  contentTarget.innerHTML =""
+})
 eventHub.addEventListener("showWitnessesClicked", event => {
   contentTarget.innerHTML =""
 })

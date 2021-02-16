@@ -24,8 +24,7 @@ const render = (noteCollection, criminalCollection) => {
                 <p>Text: ${note.text}</p>
                 <p>Author: ${note.author}</p>
             </section>
-            <button id="deleteNote--${note.id}">Delete</button>
-
+            <button class="dNoteButton" id="deleteNote--${note.id}">Delete</button>
         `
     }).join("")
     
