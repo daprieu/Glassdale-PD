@@ -10,9 +10,9 @@ const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 
-let facilities = []
-let crimFac = []
-let criminals = []
+let facilities = useFacilities()
+let crimFac = useCriminalFacilities()
+let criminals = useCriminals()
 
 export const CriminalList = () => {
   // Kick off the fetching of both collections of data
@@ -32,8 +32,6 @@ export const CriminalList = () => {
 }
 
 const render = (criminalsToRender, allFacilities, allRelationships) => {
-
-
   // Step 1 - Iterate all criminals
   contentTarget.innerHTML = criminalsToRender.map(
       (criminal) => {
@@ -56,26 +54,17 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
 eventHub.addEventListener("crimeChosen", event => {
   // Use the property you added to the event detail.
   if (event.detail.crimeThatWasChosen !== "0"){
+    const facilities = useFacilities()
+    const crimFac = useCriminalFacilities()
     const appStateConvicitons = useConvictions()
-    
-    // Use the find method to get the first object in the convictions array that has the same id as the id of the chosen crime
-    
+
     const convictionThatWasChosen = appStateConvicitons.find(convictionObj => {
       return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
     })
-    
-      /*
-          Filter the criminals application state down to the people that committed the crime
-      */
     const appStateCriminals = useCriminals()
       const matchingCriminals = appStateCriminals.filter(criminalObj => {
         return criminalObj.conviction === convictionThatWasChosen.name
       })
-        
-      /*
-          Then invoke render() and pass the filtered collection as
-          an argument
-      */
     render(matchingCriminals, facilities, crimFac)
     
   }
@@ -83,7 +72,8 @@ eventHub.addEventListener("crimeChosen", event => {
 
 eventHub.addEventListener("officerSelected", event => {
   if (event.detail.officer !== "0"){
-    
+    const facilities = useFacilities()
+    const crimFac = useCriminalFacilities()
     const officerArray = useOfficers()
     const officerName = event.detail.officer
 
@@ -97,7 +87,7 @@ eventHub.addEventListener("officerSelected", event => {
       return criminalObj.arrestingOfficer === officerChosen.name
     })
     
-    render(matchingCriminals, facilities, criminals)
+    render(matchingCriminals, facilities, crimFac)
     
     
     }
