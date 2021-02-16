@@ -1,0 +1,17 @@
+.facilities {
+    border: dotted grey;
+    padding: 1em;
+    margin: 12pt;
+    /* width: 100pt; */
+}
+.facilityName {
+    font-weight: bold;
+    padding: 1em 0;
+}
+.facilityCriminals {
+    font-weight: bold;
+    padding: 1em;
+}
+.text {
+    padding: .5em 0;
+}

@@ -1,4 +1,5 @@
 @import "AssociModal.css";
+@import "facilities.css";
 .bodySection {
     display:flex
 }
@@ -40,7 +41,7 @@ p {
 display: grid;
 grid-template-columns: auto auto auto;
 flex-basis: 75%;
-border: solid black;
+border: thin solid black;
 margin-top: 1em;
 }
 
@@ -51,7 +52,7 @@ margin-top: 1em;
 
 .noteList {
     
-    border: solid;
+    border: thin solid;
 }
 
 .note {
@@ -59,4 +60,7 @@ margin-top: 1em;
 }
 .noteButtons {
     margin: 0 1em 0 .0;
+}
+.dNoteButton {
+    margin: 0 1em;
 }

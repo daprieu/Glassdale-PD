@@ -12,6 +12,8 @@ import { WitnessesList } from "./witnesses/WitnessList.js";
 import { getCriminals } from "./criminals/CriminalDataProvider.js";
 import { getFacilities } from "./facility/FacilityProvider.js";
 import { getCriminalFacilities } from "./facility/CriminalFacilityProvider.js";
+import { DisplayFacilityButton } from "./facility/DisplayFacilitiesButton.js";
+import { FacilityList } from "./facility/FacilityList.js";
 // import { ShowWitnessesButton } from "./witnesses/ShowWitnessButton.js";
 
 
@@ -25,10 +27,10 @@ OfficerSelect()
 NoteForm()
 // saveNote()
 ShowNoteButton()
+ShowWitnessesButton()
 
 getWitnesses()
-ShowWitnessesButton()
-WitnessesList()
 // ShowWitnessesButton()
-getFacilities()
-getCriminalFacilities()
+WitnessesList()
+DisplayFacilityButton()
+FacilityList()
