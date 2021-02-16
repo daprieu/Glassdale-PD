@@ -10,14 +10,10 @@ const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 
-// Render ALL criminals initally
-// export const CriminalList = () => {
-//   getCriminals()
-//       .then(() => {
-//           const appStateCriminals = useCriminals()
-//           render(appStateCriminals)
-//       })
-// }
+let facilities = []
+let crimFac = []
+let criminals = []
+
 export const CriminalList = () => {
   // Kick off the fetching of both collections of data
   getFacilities()
@@ -35,21 +31,9 @@ export const CriminalList = () => {
       )
 }
 
-const criminalRender = criminalCollection => {
-  let criminalsHTMLRepresentations = ""
-
-  for (const criminal of criminalCollection) {
-    criminalsHTMLRepresentations += Criminal(criminal)
-  }
-
-  contentTarget.innerHTML = `
-        <h3>Criminals</h3>
-        <section class="criminalsList">
-        ${criminalsHTMLRepresentations}
-        </section>`
-        
-}
 const render = (criminalsToRender, allFacilities, allRelationships) => {
+
+
   // Step 1 - Iterate all criminals
   contentTarget.innerHTML = criminalsToRender.map(
       (criminal) => {
@@ -92,8 +76,8 @@ eventHub.addEventListener("crimeChosen", event => {
           Then invoke render() and pass the filtered collection as
           an argument
       */
-    criminalRender(matchingCriminals)
-    console.log(matchingCriminals)
+    render(matchingCriminals, facilities, crimFac)
+    
   }
 })
 
@@ -102,26 +86,20 @@ eventHub.addEventListener("officerSelected", event => {
     
     const officerArray = useOfficers()
     const officerName = event.detail.officer
-//event.detail.officer = (changeEvent.target.value which is set equal to officer selected) = officer id set in the 
-//value of html <option> element when mapping officers.
 
-// How can you access the officer name that was selected by the user?
-// Use the find method to get the first object in the convictions array that has the same id as the id of the chosen crime
-// officer is represented via the value.id in officerSelect
-// need to .find() to get officer of that id then convert id to string name....?
     const officerChosen = officerArray.find(officerObj => {
-      // console.log("id", officerObj.id)
-      // console.log("name", officerName)
+  
       return officerObj.id === parseInt(officerName)
     })
-    // How can you get the criminals that were arrested by that officer?
-    //
+    
     const criminalsArray = useCriminals()
     const matchingCriminals = criminalsArray.filter(criminalObj => {
       return criminalObj.arrestingOfficer === officerChosen.name
     })
-    // console.log(matchingCriminals)
-    criminalRender(matchingCriminals)
+    
+    render(matchingCriminals, facilities, criminals)
+    
+    
     }
 })
 
