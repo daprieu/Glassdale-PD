@@ -12,11 +12,14 @@ const render = (facilitiesToRender, allCriminals, allRelationships)=> {
     contentTarget.innerHTML = facilitiesToRender.map(
         (facility) => {
             // Step 2 - Filter all relationships to get only ones for this facility
-            const criminalRelationshipsForThisFacility = allRelationships.filter(cf => cf.facilityId === facility.id)
+            const facilityCriminalRelationship = allRelationships.filter(cf => cf.facilityId === facility.id)
+            console.log('facilityCriminalRelationship: ', facilityCriminalRelationship);
 
             // Step 3 - Convert the relationships to criminals with map()
-            const criminals = criminalRelationshipsForThisFacility.map(cf => {
+            const criminals = facilityCriminalRelationship.map(cf => {
+                
                 const matchingCriminalObject = allCriminals.find(criminal => criminal.id === cf.criminalId)
+                console.log('matchingCriminalObject: ', matchingCriminalObject);
                 return matchingCriminalObject
             })
 
