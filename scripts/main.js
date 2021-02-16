@@ -8,12 +8,12 @@ import { OfficerSelect } from "./officers/OfficerSelect.js";
 import "./notes/NoteList.js"
 import { getWitnesses } from "./witnesses/WitnessDataProvider.js";
 import { ShowWitnessesButton } from "./witnesses/ShowWitnessButton.js";
-import { WitnessesList } from "./witnesses/WitnessList.js";
+import "./witnesses/WitnessList.js";
 import { getCriminals } from "./criminals/CriminalDataProvider.js";
 import { getFacilities } from "./facility/FacilityProvider.js";
 import { getCriminalFacilities } from "./facility/CriminalFacilityProvider.js";
 import { DisplayFacilityButton } from "./facility/DisplayFacilitiesButton.js";
-import { FacilityList } from "./facility/FacilityList.js";
+import "./facility/FacilityList.js";
 // import { ShowWitnessesButton } from "./witnesses/ShowWitnessButton.js";
 
 
@@ -31,6 +31,6 @@ ShowWitnessesButton()
 
 getWitnesses()
 // ShowWitnessesButton()
-WitnessesList()
+// WitnessesList()
 DisplayFacilityButton()
-FacilityList()
+// FacilityList()
